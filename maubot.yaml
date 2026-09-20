@@ -1,0 +1,7 @@
+maubot: 0.1.0
+id: com.github.pkorba.urbautrix
+version: 1.0.0
+license: MIT
+modules:
+  - urbautrix
+main_class: UrbautrixBot
