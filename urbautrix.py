@@ -17,7 +17,7 @@ class UrbanData:
 
 class UrbautrixBot(Plugin):
     url = "https://api.urbandictionary.com/v0/define"
-    headers = {"User-Agent": "UrbautrixBot/1.0.0"}
+    headers = {"User-Agent": "UrbautrixBot/1.1.0"}
 
     @command.new(name="urban", aliases=["ud"], help="Get a definition from Urban Dictionary")
     @command.argument("query", pass_raw=True, required=True)
@@ -85,8 +85,10 @@ class UrbautrixBot(Plugin):
         html = (
             "<blockquote>"
             f"<a href=\"{data.url}\"><b>{data.word}</b></a><br>"
-            f"{data.definition}<br>"
-            f"<blockquote><i>{data.example}</i></blockquote>"
+            "<div><details><summary><b>DEFINITION</b> </summary>"
+            f"{data.definition}</details></div>"
+            "<div><details><summary><b>EXAMPLE</b> </summary>"
+            f"<blockquote><i>{data.example}</i></blockquote></details></div>"
             "<p><b><sub>Results from Urban Dictionary</sub></b></p>"
             "</blockquote>"
         )
